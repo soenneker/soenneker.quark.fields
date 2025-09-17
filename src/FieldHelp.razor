@@ -24,7 +24,7 @@
         if (ParentIsFieldBody)
             baseClasses += " field-help-in-body";
 
-        attributes["class"] = AppendToClass(attributes.GetValueOrDefault("class")?.ToString(), baseClasses);
+        AppendToClassAttr(attributes, baseClasses);
 
         return attributes;
     }

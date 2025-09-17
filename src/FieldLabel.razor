@@ -62,7 +62,7 @@
 
         string baseClasses = IsHorizontal ? "col-form-label" : "form-label";
 
-        attributes["class"] = AppendToClass(attributes.GetValueOrDefault("class")?.ToString(), baseClasses);
+        AppendToClassAttr(attributes, baseClasses);
 
         if (For.HasContent())
             attributes["for"] = For;
