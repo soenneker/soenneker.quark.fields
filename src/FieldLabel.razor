@@ -1,3 +1,4 @@
+@using Soenneker.Extensions.String
 @using Soenneker.Quark.Labels
 @using Soenneker.Quark.Spans
 @inherits Soenneker.Quark.Components.Element
@@ -57,13 +58,13 @@
 
     protected override Dictionary<string, object> BuildAttributes()
     {
-        var attributes = base.BuildAttributes();
+        Dictionary<string, object> attributes = base.BuildAttributes();
 
-        var baseClasses = IsHorizontal ? "col-form-label" : "form-label";
+        string baseClasses = IsHorizontal ? "col-form-label" : "form-label";
 
         attributes["class"] = AppendToClass(attributes.GetValueOrDefault("class")?.ToString(), baseClasses);
 
-        if (!string.IsNullOrEmpty(For))
+        if (For.HasContent())
             attributes["for"] = For;
 
         return attributes;
