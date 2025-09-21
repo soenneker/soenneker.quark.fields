@@ -2,19 +2,17 @@
 @using Soenneker.Quark.Divs
 @inherits Soenneker.Quark.Components.Element
 
-<CascadingValue Value="@this" IsFixed>
-    <Div @attributes="BuildAttributes()">
+<CascadingValue Value="@this" IsFixed >
+    <Div @attributes="BuildAttributes()" >
         @ChildContent
     </Div>
 </CascadingValue>
 
 @code {
+    public override string? Name { get; set; } = "Field";
+
     private bool _horizontal;
     private List<Component>? _childComponents;
-
-    @code {
-        public override string? Name { get; set; } = "Field";
-    }
 
     /// <summary>
     /// Determines whether the form controls should be aligned horizontally, as in a horizontal form layout.
@@ -52,7 +50,7 @@
     protected override Dictionary<string, object> BuildAttributes()
     {
         Dictionary<string, object> attributes = base.BuildAttributes();
-        
+
         var baseClasses = "form-group";
         if (_horizontal)
             baseClasses += " row";
@@ -61,4 +59,5 @@
 
         return attributes;
     }
+
 }
