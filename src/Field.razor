@@ -12,6 +12,10 @@
     private bool _horizontal;
     private List<Component>? _childComponents;
 
+    @code {
+        public override string? Name { get; set; } = "Field";
+    }
+
     /// <summary>
     /// Determines whether the form controls should be aligned horizontally, as in a horizontal form layout.
     /// </summary>
