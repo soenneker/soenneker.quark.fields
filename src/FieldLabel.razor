@@ -1,6 +1,5 @@
 @using Soenneker.Extensions.String
-@using Soenneker.Quark.Labels
-@using Soenneker.Quark.Spans
+
 @inherits Soenneker.Quark.Element
 
 <Label @attributes="BuildAttributes()">
@@ -12,6 +11,8 @@
 </Label>
 
 @code {
+	public override string? Name { get; set; } = "FieldLabel";
+
     private bool _requiredIndicator;
 
     /// <summary>

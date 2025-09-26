@@ -1,4 +1,3 @@
-@using Soenneker.Quark.Divs
 @inherits Soenneker.Quark.Element
 
 <Div @attributes="BuildAttributes()">
@@ -6,6 +5,8 @@
 </Div>
 
 @code {
+	public override string? Name { get; set; } = "FieldBody";
+
     /// <summary>
     /// True if component is inside of a Field marked as horizontal.
     /// </summary>
